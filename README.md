@@ -2,6 +2,10 @@
 
 A simple and interactive calculator web application built to perform basic arithmetic operations with a user-friendly interface. 
 
+![Screenshot (513)](https://github.com/user-attachments/assets/0b7b3326-10cc-46a5-a0c7-e9e5471d2aef)
+![Screenshot (514)](https://github.com/user-attachments/assets/c13bd059-31de-4926-9d1f-24d31ca8e813)
+
+
 ## 🚀 Features
 - Perform basic arithmetic operations: Addition, Subtraction, Multiplication, Division.
 - Clear and reset functionality for error-free calculations.
