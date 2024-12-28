@@ -1,10 +1,12 @@
-
 import React, { useState } from "react";
-import { StyleSheet, View, TextInput, StatusBar, Text } from "react-native";
+import { StyleSheet, View, TextInput, StatusBar, Text, Switch } from "react-native";
 import Button from "./Button";
 
 const Home = () => {
   const [input, setInput] = useState("");
+  const [isDarkTheme, setIsDarkTheme] = useState(true); // State for theme
+
+  const toggleTheme = () => setIsDarkTheme(!isDarkTheme);
 
   const caculate = () => {
     if (!input) {
@@ -67,14 +69,23 @@ const Home = () => {
     setInput(eval(exp + "/100") + "");
   };
 
+  // Dynamic styles based on theme
+  const currentStyles = isDarkTheme ? styles.dark : styles.light;
+
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, currentStyles.container]}>
+      <View style={styles.themeSwitch}>
+        <Text style={currentStyles.themeText}>
+          {isDarkTheme ? "Dark Mode" : "Light Mode"}
+        </Text>
+        <Switch value={isDarkTheme} onValueChange={toggleTheme} />
+      </View>
       <TextInput
         maxLength={10}
         value={input}
         keyboardType="number-pad"
         showSoftInputOnFocus={false}
-        style={styles.input}
+        style={[styles.input, currentStyles.input]}
       />
       <View style={styles.buttonContainer}>
         <View style={styles.row}>
@@ -125,7 +136,7 @@ const Home = () => {
           </Button>
         </View>
       </View>
-      
+      <Text style={[styles.footer, currentStyles.footer]}>Calc by Nishant Surve</Text>
     </View>
   );
 };
@@ -141,28 +152,59 @@ const styles = StyleSheet.create({
     padding: 20,
     paddingTop: StatusBar.currentHeight + 20,
     width: "100%",
-    backgroundColor: "black",
   },
   input: {
     width: "100%",
     height: "30%",
     fontSize: 75,
     textAlign: "right",
-    color: "white",
     fontWeight: "300",
   },
   row: {
     flexDirection: "row",
     justifyContent: "space-around",
   },
+  themeSwitch: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 10,
+  },
   footer: {
-    textAlign: "center",
+    position: "absolute",
+    bottom: 2,
+    alignSelf: "center",
     fontSize: 18,
     fontWeight: "bold",
-    color: "gray",
-    padding: 10,
+  },
+  dark: {
+    container: {
+      backgroundColor: "black",
+    },
+    input: {
+      color: "white",
+    },
+    themeText: {
+      color: "white",
+    },
+    footer: {
+      color: "gray",
+    },
+  },
+  light: {
+    container: {
+      backgroundColor: "white",
+    },
+    input: {
+      color: "black",
+    },
+    themeText: {
+      color: "black",
+    },
+    footer: {
+      color: "black",
+    },
   },
 });
 
 export default Home;
-
