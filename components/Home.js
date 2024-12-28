@@ -7,13 +7,15 @@ const Home = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(true); // State for theme
 
   const toggleTheme = () => setIsDarkTheme(!isDarkTheme);
+  
 
   const caculate = () => {
+
     if (!input) {
       setInput("0");
       return;
     }
-
+    
     let actualString = "";
     for (let a of input) {
       if (a === "x") actualString = actualString + "*";
