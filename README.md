@@ -2,8 +2,10 @@
 
 A simple and interactive calculator web application built to perform basic arithmetic operations with a user-friendly interface.
 
-<img src="https://github.com/user-attachments/assets/0b7b3326-10cc-46a5-a0c7-e9e5471d2aef" alt="Screenshot (513)" width="200px" />
-<img src="https://github.com/user-attachments/assets/c13bd059-31de-4926-9d1f-24d31ca8e813" alt="Screenshot (514)" width="200px" />
+<img src="/assets/photo1.jpg" alt="Screenshot (513)" width="200px" />
+<img src="/assets/photo2.jpg" alt="Screenshot (514)" width="200px" />
+<img src="/assets/photo3.jpg" alt="Screenshot (514)" width="200px" />
+<img src="/assets/photo4.jpg" alt="Screenshot (514)" width="200px" />
 
 ---
 
